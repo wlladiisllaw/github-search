@@ -10,6 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "antd": "^5.23.1",
+    "lodash": "^4.17.21",
+    "mobx": "^6.13.5",
+    "mobx-react": "^9.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -17,6 +21,7 @@
     "@eslint/js": "^9.17.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.1.0",
+    "@types/lodash": "^4.17.14",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
