@@ -1,43 +1,57 @@
 import { observer } from "mobx-react";
 import { useEffect, useState, useRef } from "react";
-import { Card, Avatar, Skeleton, Input, Select } from "antd";
-import { StarOutlined, EyeOutlined, ForkOutlined } from "@ant-design/icons";
+import { Card, Skeleton, Input, Select} from "antd";
+
 import { repositoryStore } from "./repositoryStore";
+
+import { RepositoryCard } from "./RepositoryCard";
 
 const { Search } = Input;
 
-export const Test = observer(() => {
-  const [searchValue, setSearchValue] = useState(repositoryStore.search);
-  const [sortValue, setSortValue] = useState('Фильтр');
-  const debounceTimeout = useRef<NodeJS.Timeout | null>(null);
+type DebounceCallback = () => void;
 
-  const debounce = (callback: () => void, delay: number) => {
+export const Test = observer(() => {
+  const [searchValue, setSearchValue] = useState(repositoryStore.search); 
+  const [sortValue, setSortValue] = useState("Фильтр"); 
+  const debounceTimeout = useRef<NodeJS.Timeout | null>(null); 
+
+ 
+  const debounce = (callback: DebounceCallback, delay: number) => {
+
     if (debounceTimeout.current) {
       clearTimeout(debounceTimeout.current);
     }
+
+
     debounceTimeout.current = setTimeout(callback, delay);
   };
 
+  
   const handleInputChange = (value: string) => {
     setSearchValue(value);
+    console.log("Search Value:", value); 
     debounce(() => {
       repositoryStore.setSearch(value);
-      repositoryStore.resetData();
-    }, 2000);
+      repositoryStore.resetData(); 
+    }, 2000); 
   };
 
+  
   const handleSortChange = (value: string) => {
     setSortValue(value);
+    console.log("Sort Value:", value); 
     debounce(() => {
-      repositoryStore.setSort(value);
-      repositoryStore.resetData();
-    }, 2000);
+      repositoryStore.setSort(value); 
+      repositoryStore.resetData(); 
+    }, 2000); 
   };
+
 
   const scrollHandler = () => {
     if (
-      document.documentElement.scrollHeight - 
-      (document.documentElement.scrollTop + window.innerHeight) < 100
+      document.documentElement.scrollHeight -
+        (document.documentElement.scrollTop + window.innerHeight) <
+      100
     ) {
       repositoryStore.setFetching(true);
     }
@@ -83,7 +97,7 @@ export const Test = observer(() => {
           value={sortValue}
           style={{ width: 150 }}
           onChange={handleSortChange}
-          placeholder='Сортировка'
+          placeholder="Сортировка"
           options={[
             { value: "stars", label: "Звезды" },
             { value: "forks", label: "Форки" },
@@ -109,42 +123,33 @@ export const Test = observer(() => {
                 <Skeleton active avatar paragraph={{ rows: 3 }} />
               </Card>
             ))
-          : repositoryStore.data.map(
-              ({ name, avatar, html_url, stars, forks, watchers }, index) => (
-                <Card key={index} style={{ width: 340, height: 240 }}>
-                  <Card.Meta
-                    avatar={<Avatar src={avatar} size={64} />}
-                    title={
-                      <a
-                        href={html_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {name}
-                      </a>
-                    }
-                    description={
-                      <>
-                        <p>
-                          <StarOutlined /> Stars: {stars}
-                        </p>
-                        <p>
-                          <ForkOutlined /> Forks: {forks}
-                        </p>
-                        <p>
-                          <EyeOutlined /> Watchers: {watchers}
-                        </p>
-                      </>
-                    }
-                  />
-                </Card>
-              )
-            )}
+          : repositoryStore.data.map((repo, index) => (
+              <RepositoryCard
+                key={index}
+                repo={{
+                  name: repo.name,
+                  avatar: repo.avatar,
+                  html_url: repo.html_url,
+                  stars: repo.stars,
+                  forks: repo.forks,
+                  watchers: repo.watchers,
+                }}
+                index={index}
+              />
+            ))}
 
         {repositoryStore.loadingNewItems &&
           Array.from({ length: 6 }, (_, idx) => (
-            <Card key={idx} style={{ width: 340, height: 240 }}>
-              <Skeleton active avatar paragraph={{ rows: 3 }} />
+            <Card
+              key={idx}
+              style={{
+                width: 340,
+                height: 240,
+                position: "relative",
+                marginTop: 35,
+              }}
+            >
+              <Skeleton active paragraph={{ rows: 3 }} />
             </Card>
           ))}
       </div>

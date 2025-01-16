@@ -5,18 +5,41 @@ export function Header() {
         backgroundColor: "#0077FF",
         color: "white",
         fontSize: "30px",
-        textAlign: "center",
-        justifyContent: 'center',
         padding: "10px 0",
-        width: "100%", 
-        margin: "0", 
+        width: "100%",
+        margin: "0",
         position: "fixed",
-        top: 0, 
-        left: 0, 
-        zIndex: 1000, 
+        top: 0,
+        left: 0,
+        zIndex: 1000,
+        display: 'flex',
+        alignItems: "center", 
+        justifyContent: "center", 
+        gap: "10px", 
       }}
     >
-      Search GitHub by Vladislav
+      <a
+        href="https://github.com/wlladiisllaw/github-search"
+        target="_blank"
+        style={{
+          display: "flex", 
+          alignItems: "center", 
+          justifyContent: "center", 
+          height: "50px", 
+        }}
+      >
+        <img
+          src="../public/vk_logo.svg"
+          alt="логотип VK"
+          style={{
+            height: "40px", 
+            width: "auto", 
+            margin: 0,
+            padding: 0
+          }}
+        />
+      </a>
+      <h3 style={{ margin: 0 }}>ГитГид</h3>
     </header>
   );
 }

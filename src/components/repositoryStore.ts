@@ -43,6 +43,15 @@ class RepositoryStore {
     this.isLoading = true;
     this.fetching = true;
   }
+  ////
+  updateRepository(index: number, updatedRepo: Partial<Repository>) {
+    this.data[index] = { ...this.data[index], ...updatedRepo };
+  }
+
+  removeRepository(index: number) {
+    this.data.splice(index, 1);
+  }
+  ///
 
   async fetchRepositories() {
     const url = `https://api.github.com/search/repositories?q=${

@@ -29,7 +29,7 @@ export const SearchAndSort = () => {
         justifyContent: "center",
         alignItems: "center",
         position: "fixed",
-        top: "80px", 
+        top: "80px",
         left: "50%",
         transform: "translateX(-50%)",
         zIndex: 1000,
@@ -42,7 +42,7 @@ export const SearchAndSort = () => {
         value={repositoryStore.search}
         onChange={(e) => handleInputChange(e.target.value)}
         onSearch={(value) => handleInputChange(value)}
-        style={{ width: 250, marginRight: "10px" }} 
+        style={{ width: 250, marginRight: "10px" }}
       />
       <Select
         defaultValue="Sort by"

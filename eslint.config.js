@@ -25,5 +25,5 @@ export default tseslint.config(
       ],
       "no-unused-vars": "off",
     },
-  }
+  },
 );
