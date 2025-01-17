@@ -1,17 +1,17 @@
 import { makeAutoObservable } from "mobx";
 
 interface Repository {
-  name: string; // Название репозитория
-  avatar: string; // URL аватара владельца
-  html_url: string; // Ссылка на репозиторий
-  stars: number; // Количество звезд
-  stargazers_count: number; // Количество звезд
-  forks: number; // Количество форков
-  watchers: number; // Количество наблюдателей
-  owner: {
-    avatar_url: string; // URL аватара владельца
-  };
-}
+    name: string;
+    avatar: string;
+    html_url: string;
+    stars: number;
+    stargazers_count: number;
+    forks: number;
+    created_at: string; // Сохраняем как строку
+    owner: {
+      avatar_url: string;
+    };
+  }
 
 class RepositoryStore {
   data: Repository[] = [];
@@ -45,6 +45,7 @@ class RepositoryStore {
   }
   ////
   updateRepository(index: number, updatedRepo: Partial<Repository>) {
+  
     this.data[index] = { ...this.data[index], ...updatedRepo };
   }
 
@@ -69,9 +70,10 @@ class RepositoryStore {
         html_url: item.html_url,
         stars: item.stargazers_count,
         forks: item.forks,
-        watchers: item.watchers,
+        created_at: item.created_at.substring(0,4),
         owner: item.owner,
       }));
+      console.log(repos);
 
       this.data = this.currentPage === 1 ? repos : [...this.data, ...repos];
       this.currentPage += 1;

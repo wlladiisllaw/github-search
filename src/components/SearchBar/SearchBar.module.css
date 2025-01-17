@@ -1,0 +1,16 @@
+.searchWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  }
+  
+  .searchInput {
+    width: 250px;
+    margin-right: 10px;
+  }
+  

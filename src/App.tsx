@@ -1,5 +1,5 @@
 import "./App.css";
-import { Test } from "./components/Test";
+import { Test } from "./Test";
 import { Header } from "./Header";
 
 function App() {
