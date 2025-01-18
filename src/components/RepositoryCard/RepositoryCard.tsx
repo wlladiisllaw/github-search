@@ -6,15 +6,14 @@ import {
   UpCircleOutlined,
 } from "@ant-design/icons";
 import { repositoryStore } from "../../store/repositoryStore";
-import styles from "./RepositoryCard.module.css";  // Импорт стилей
+import styles from "./RepositoryCard.module.css";  
 
-interface RepositoryCardProps {
+export interface RepositoryCardProps {
   repo: {
     created_at: string,
     name: string;
     html_url: string;
     avatar: string;
-    watchers: number;
     stars: number;
     forks: number;
   };
@@ -53,21 +52,21 @@ export const RepositoryCard: React.FC<RepositoryCardProps> = ({ repo, index }) =
               <>
                <div className={styles.row}>
                 <p>
-                  <UpCircleOutlined style={{ color: "green" }} className={styles.icon} /> Место:{" "} <br />
+                  <UpCircleOutlined style={{ color: "green" }} className={styles.icon} /> Место: <br />
                   {index + 1}
                 </p>
                 <p>
-                  <CalendarOutlined  style={{ color: "purple" }} className={styles.icon} /> Дата:{" "} <br />
+                  <CalendarOutlined  style={{ color: "purple" }} className={styles.icon} /> Дата: <br />
                   {repo.created_at}
                 </p>
                 </div>
                 <div className={styles.row}>
                 <p>
-                  <StarOutlined style={{ color: "gold" }} className={styles.icon} /> Звёзды:{" "} <br />
+                  <StarOutlined style={{ color: "gold" }} className={styles.icon} /> Звёзды: <br />
                   {repo.stars}
                 </p>
                 <p>
-                  <ForkOutlined style={{ color: "red" }} className={styles.icon} /> Форки:{" "} <br />
+                  <ForkOutlined style={{ color: "red" }} className={styles.icon} /> Форки: <br />
                   {repo.forks}
                 </p>
                 </div>
@@ -76,11 +75,11 @@ export const RepositoryCard: React.FC<RepositoryCardProps> = ({ repo, index }) =
               <>
                <div className={styles.row}>
                <p>
-                  <UpCircleOutlined style={{ color: "green" }} className={styles.icon} /> Место:{" "} <br />
+                  <UpCircleOutlined style={{ color: "green" }} className={styles.icon} /> Место: <br />
                   {index + 1}
                 </p>
                 <p>
-                  <CalendarOutlined style={{ color: "purple" }} className={styles.icon} /> Дата:{" "} <br />
+                  <CalendarOutlined style={{ color: "purple" }} className={styles.icon} /> Дата: <br />
                   <Input
                     value={editDate}
                     onChange={(e) => setEditDate(e.target.value)}
@@ -91,7 +90,7 @@ export const RepositoryCard: React.FC<RepositoryCardProps> = ({ repo, index }) =
                 </div>
                 < div className={styles.row}>
                 <p>
-                  <StarOutlined style={{ color: "gold" }} className={styles.icon} /> Звёзды:{" "} <br />
+                  <StarOutlined style={{ color: "gold" }} className={styles.icon} /> Звёзды: <br />
                   <Input
                     value={editStars}
                     onChange={(e) => setEditStars(Number(e.target.value))}

@@ -1,0 +1,16 @@
+.controlsPanel {
+    background-color: #2ecc71;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    position: fixed;
+    padding: 10px;
+    z-index: 1;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-sizing: border-box; 
+    flex-wrap: wrap; 
+}

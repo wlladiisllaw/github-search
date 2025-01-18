@@ -1,16 +1,11 @@
-/*контейнер*/
-.cardContainer {
+  .cardContainer {
   width: 340px;
   height: auto;
   border: 3px solid rgba(0, 119, 255, 0.1);
-  padding: 0;
+  padding: 0 !important;
   margin: 0;
-}
+  }
 
-/******/
-  
-/*элементы*/
-  
   .cardDescription {
     display: flex;
     flex-direction: column;
@@ -23,7 +18,7 @@
   }
   
   .row p {
-    flex: 1; /* Каждый элемент занимает равное пространство */
+    flex: 1; 
     margin: 0 5px;
     text-align: center;
     font-size: 1.1rem;
@@ -31,7 +26,12 @@
   
   .row .icon {
     margin-right: 5px;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    transition: transform 0.8s ease;
+  }
+
+  .row .icon:hover {
+    transform: rotate(360deg) scale(1.3);
   }
 
   
@@ -45,9 +45,6 @@
     font-size: 1.1rem;
   }
 
-/*элементы*/
-
-  /*кнопки*/
   .buttonContainer {
     display: flex;
     width: 100%;
@@ -80,10 +77,7 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px; 
   }
-  /*********/
-  
 
-/*хэдер кнопки*/
   .headerContainer {
     background-color:#0077ff;
 
@@ -123,18 +117,18 @@
   }
   
   .cardTitleInline:hover::after {
-    width: 100%; /* Линия растягивается по всей ширине текста */
+    width: 100%; 
   }
 
   .cardAvatarInline {
     margin: 5px;
-    transition: transform 0.7s ease; /* Плавный переход */
+    transition: transform 0.7s ease; 
   }
 
   .cardAvatarInline:hover {
-    transform: rotate(20deg);
+    transform: rotate(360deg);
   }
-/*******/
+
   
 
 

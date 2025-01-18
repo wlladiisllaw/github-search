@@ -15,7 +15,7 @@ export const SortSelector: React.FC<SortSelectorProps> = ({
     <div className={styles.sortWrapper}>
       <Select
         value={sortValue}
-        style={{ width: 150 }}
+        size="large"
         onChange={onSortChange}
         placeholder="Сортировка"
         options={[

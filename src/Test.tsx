@@ -4,6 +4,7 @@ import { repositoryStore } from "./store/repositoryStore";
 import {SearchBar} from "./components/SearchBar/SearchBar";
 import {SortSelector} from "./components/SortSelector/SortSelector";
 import {RepositoryList} from "./components/RepositoryList/RepositoryList";
+import { ControlsPanel } from "./components/ControlsPanel/ControlsPanel";
 
 export const Test = observer(() => {
   const [searchValue, setSearchValue] = useState(repositoryStore.search);
@@ -53,12 +54,12 @@ export const Test = observer(() => {
   }, [repositoryStore.fetching]);
 
   return (
-    <div style={{ textAlign: "center", padding: "20px" }}>
-      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
+    <div >
+      <ControlsPanel>
         <SearchBar searchValue={searchValue} onSearchChange={handleInputChange} onSearch={handleInputChange} />
         <SortSelector sortValue={sortValue} onSortChange={handleSortChange} />
-      </div>
-      {repositoryStore.error && <div style={{ color: "red" }}>Ошибка: {repositoryStore.error}</div>}
+      </ControlsPanel>
+     
       <RepositoryList
         isLoading={repositoryStore.isLoading}
         repositories={repositoryStore.data}
@@ -67,3 +68,5 @@ export const Test = observer(() => {
     </div>
   );
 });
+
+

@@ -1,8 +1,9 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
+  margin: auto;
   padding: 0;
   text-align: center;
+  margin-top: 0;
 }
 
 @font-face {
@@ -23,15 +24,8 @@ p,
 a,
 span,
 div {
-  font-family: "VK Sans", sans-serif;
+  font-family: "VK Sans"
 }
 
-.icon {
-  font-size: 24px;
-  color: black;
-  transition: color 0.3s ease;
-}
 
-.icon:hover {
-  color: gold; /* Цвет при наведении */
-}
+

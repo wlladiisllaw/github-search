@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx";
 
-interface Repository {
+export interface Repository {
     name: string;
     avatar: string;
     html_url: string;
@@ -43,6 +43,10 @@ class RepositoryStore {
     this.isLoading = true;
     this.fetching = true;
   }
+
+  clearError() {
+    this.error = null;
+  }
   ////
   updateRepository(index: number, updatedRepo: Partial<Repository>) {
   
@@ -55,6 +59,8 @@ class RepositoryStore {
   ///
 
   async fetchRepositories() {
+    this.clearError(); // Сброс ошибки перед новым запросом
+
     const url = `https://api.github.com/search/repositories?q=${
       this.search
     }&per_page=24&page=${this.currentPage}${

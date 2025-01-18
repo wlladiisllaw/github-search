@@ -14,7 +14,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ searchValue, onSearchChang
   return (
     <div className={styles.searchWrapper}>
       <Search
-        placeholder="Search repositories"
+        placeholder="Поиск по технолиям"
         size="large"
         enterButton
         value={searchValue}
