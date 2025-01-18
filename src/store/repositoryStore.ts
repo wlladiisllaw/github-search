@@ -7,7 +7,7 @@ export interface Repository {
     stars: number;
     stargazers_count: number;
     forks: number;
-    created_at: string; // Сохраняем как строку
+    created_at: string; 
     owner: {
       avatar_url: string;
     };
@@ -47,7 +47,7 @@ class RepositoryStore {
   clearError() {
     this.error = null;
   }
-  ////
+
   updateRepository(index: number, updatedRepo: Partial<Repository>) {
   
     this.data[index] = { ...this.data[index], ...updatedRepo };
@@ -56,10 +56,10 @@ class RepositoryStore {
   removeRepository(index: number) {
     this.data.splice(index, 1);
   }
-  ///
+
 
   async fetchRepositories() {
-    this.clearError(); // Сброс ошибки перед новым запросом
+    this.clearError(); 
 
     const url = `https://api.github.com/search/repositories?q=${
       this.search

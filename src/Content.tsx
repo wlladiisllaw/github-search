@@ -6,7 +6,7 @@ import {SortSelector} from "./components/SortSelector/SortSelector";
 import {RepositoryList} from "./components/RepositoryList/RepositoryList";
 import { ControlsPanel } from "./components/ControlsPanel/ControlsPanel";
 
-export const Test = observer(() => {
+export const Content = observer(() => {
   const [searchValue, setSearchValue] = useState(repositoryStore.search);
   const [sortValue, setSortValue] = useState("Фильтр");
   const debounceTimeout = useRef<NodeJS.Timeout | null>(null);
