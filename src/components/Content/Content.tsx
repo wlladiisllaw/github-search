@@ -1,10 +1,10 @@
 import { useEffect, useState, useRef } from "react";
 import { observer } from "mobx-react";
-import { repositoryStore } from "./store/repositoryStore";
-import {SearchBar} from "./components/SearchBar/SearchBar";
-import {SortSelector} from "./components/SortSelector/SortSelector";
-import {RepositoryList} from "./components/RepositoryList/RepositoryList";
-import { ControlsPanel } from "./components/ControlsPanel/ControlsPanel";
+import { repositoryStore } from "../../store/repositoryStore";
+import {SearchBar} from "../SearchBar/SearchBar";
+import {SortSelector} from "../SortSelector/SortSelector";
+import {RepositoryList} from "../RepositoryList/RepositoryList";
+import { ControlsPanel } from "../ControlsPanel/ControlsPanel";
 
 export const Content = observer(() => {
   const [searchValue, setSearchValue] = useState(repositoryStore.search);
@@ -23,7 +23,7 @@ export const Content = observer(() => {
     debounce(() => {
       repositoryStore.setSearch(value);
       repositoryStore.resetData();
-    }, 2000);
+    }, 1000);
   };
 
   const handleSortChange = (value: string) => {
@@ -31,7 +31,7 @@ export const Content = observer(() => {
     debounce(() => {
       repositoryStore.setSort(value);
       repositoryStore.resetData();
-    }, 2000);
+    }, 1000);
   };
 
   const scrollHandler = () => {

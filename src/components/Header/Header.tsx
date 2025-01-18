@@ -9,7 +9,7 @@ export function Header() {
         className={styles.link}
       >
         <img
-          src="../public/vk_logo.svg"
+          src="./public/vk_logo.svg"
           alt="логотип VK"
           className={styles.logo}
         />

@@ -1,5 +1,5 @@
 import "./global.css";
-import { Content } from "./Content";
+import { Content } from "./components/Content/Content";
 import { Header } from "./components/Header/Header";
 
 function App() {
