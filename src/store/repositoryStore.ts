@@ -59,12 +59,12 @@ class RepositoryStore {
   async fetchRepositories() {
     this.clearError();
 
-  if (!this.search.trim()) {
-    this.isLoading = false; 
-    this.fetching = false; 
-    this.loadingNewItems = false;
-    return;
-  }
+    if (!this.search.trim()) {
+      this.isLoading = false;
+      this.fetching = false;
+      this.loadingNewItems = false;
+      return;
+    }
 
     const url = `https://api.github.com/search/repositories?q=${
       this.search

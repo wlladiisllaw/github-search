@@ -18,7 +18,7 @@ describe("RepositoryCard", () => {
     avatar: "https://example.com/avatar.jpg",
     html_url: "https://github.com/test-repo",
     stars: 10,
-    stargazers_count: 10, 
+    stargazers_count: 10,
     forks: 5,
     created_at: "2025-01-01",
     owner: { avatar_url: "https://example.com/owner-avatar.jpg" },

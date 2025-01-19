@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { ControlsPanel } from "./ControlsPanel";
-import React from "react"; 
+import React from "react";
 
 describe("ControlsPanel", () => {
   test("должен корректно рендерить дочерние элементы внутри ControlsPanel", () => {

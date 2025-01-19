@@ -1,17 +1,12 @@
 import React from "react";
-import {
-  render,
-  screen,
-  fireEvent,
-  act,
-} from "@testing-library/react";
+import { render, screen, fireEvent, act } from "@testing-library/react";
 import { SearchBar } from "./SearchBar";
 
-jest.useFakeTimers(); 
+jest.useFakeTimers();
 
 describe("SearchBar", () => {
-  const mockOnSearchChange = jest.fn(); 
-  const mockOnSearch = jest.fn(); 
+  const mockOnSearchChange = jest.fn();
+  const mockOnSearch = jest.fn();
 
   it("должен корректно отображать компонент", () => {
     render(
@@ -42,7 +37,7 @@ describe("SearchBar", () => {
     });
 
     act(() => {
-      jest.runAllTimers(); 
+      jest.runAllTimers();
     });
 
     expect(mockOnSearchChange).toHaveBeenCalledWith("Vue");
