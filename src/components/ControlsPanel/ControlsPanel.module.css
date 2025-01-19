@@ -1,27 +1,25 @@
 .controlsPanel {
-    background-color: rgba(220, 220, 220, 0.6); 
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    position: fixed;
-    padding: 10px;
-    z-index: 1;
-    top: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    box-sizing: border-box; 
-    flex-wrap: wrap; 
+  background-color: rgba(220, 220, 220, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  padding: 10px;
+  z-index: 1;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
 
-    width: 1050px;
+  width: 1050px;
 }
 
 @media (max-width: 768px) {
-    .controlsPanel {
-        flex-direction: column; 
-        width: 100%;
-    }
-
-  
+  .controlsPanel {
+    flex-direction: column;
+    width: 100%;
+  }
 }

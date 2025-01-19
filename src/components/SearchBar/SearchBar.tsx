@@ -10,7 +10,11 @@ interface SearchBarProps {
   onSearch: (value: string) => void;
 }
 
-export const SearchBar: React.FC<SearchBarProps> = ({ searchValue, onSearchChange, onSearch }) => {
+export const SearchBar: React.FC<SearchBarProps> = ({
+  searchValue,
+  onSearchChange,
+  onSearch,
+}) => {
   return (
     <div className={styles.searchWrapper}>
       <Search
@@ -25,5 +29,3 @@ export const SearchBar: React.FC<SearchBarProps> = ({ searchValue, onSearchChang
     </div>
   );
 };
-
-

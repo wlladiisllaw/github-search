@@ -1,136 +1,128 @@
-  .cardContainer {
+.cardContainer {
   width: 340px;
   height: auto;
   border: 3px solid rgba(0, 119, 255, 0.1);
   padding: 0 !important;
   margin: 0;
-  }
+}
 
-  .cardDescription {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    
-  }
-  .row {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .row p {
-    flex: 1; 
-    margin: 0 5px;
-    text-align: center;
-    font-size: 1.1rem;
-  }
-  
-  .row .icon {
-    margin-right: 5px;
-    font-size: 1.2rem;
-    transition: transform 0.8s ease;
-  }
+.cardDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
 
-  .row .icon:hover {
-    transform: rotate(360deg) scale(1.3);
-  }
+.row p {
+  flex: 1;
+  margin: 0 5px;
+  text-align: center;
+  font-size: 1.1rem;
+}
 
-  
-  .cardDescription p {
-    margin: 5px 0;
-  }
-  
-  .cardDescription .editingInput {
-    width: 5rem;
-    height: 1.7rem;
-    font-size: 1.1rem;
-  }
+.row .icon {
+  margin-right: 5px;
+  font-size: 1.2rem;
+  transition: transform 0.8s ease;
+}
 
-  .buttonContainer {
-    display: flex;
-    width: 100%;
-  }
+.row .icon:hover {
+  transform: rotate(360deg) scale(1.3);
+}
 
-  .buttonEdit {
-    background-color: #2ecc71;
-    color: #ffff;
-    font-size: 1.1rem;
+.cardDescription p {
+  margin: 5px 0;
+}
 
-    width: 65%;
+.cardDescription .editingInput {
+  width: 5rem;
+  height: 1.7rem;
+  font-size: 1.1rem;
+}
 
-    border: none;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-  }
+.buttonContainer {
+  display: flex;
+  width: 100%;
+}
 
-  .buttonDelete {
-    background-color: #e74c3c;
-    color: #ffff;
-    font-size: 1.1rem;
+.buttonEdit {
+  background-color: #2ecc71;
+  color: #ffff;
+  font-size: 1.1rem;
 
-    width: 35%;
+  width: 65%;
 
-    border: none;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px; 
-  }
+  border: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
 
-  .headerContainer {
-    background-color:#0077ff;
+.buttonDelete {
+  background-color: #e74c3c;
+  color: #ffff;
+  font-size: 1.1rem;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 35%;
 
-    margin-bottom: 10px;
-    border-radius: 10px;
-  }
+  border: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
 
-  .cardTitleInline {
-    position: relative;
-    color: white;
-    margin-left: 10px;
-    font-size: 1.2em;
-    max-width: calc(100% - 70px);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: color 0.3s ease;
-  }
-  
-  .cardTitleInline::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #62fea3;
-    transition: width 0.3s ease;
-  }
-  
-  .cardTitleInline:hover {
-    color: #62fea3;;
-  }
-  
-  .cardTitleInline:hover::after {
-    width: 100%; 
-  }
+.headerContainer {
+  background-color: #0077ff;
 
-  .cardAvatarInline {
-    margin: 5px;
-    transition: transform 0.7s ease; 
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  .cardAvatarInline:hover {
-    transform: rotate(360deg);
-  }
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
 
-  
+.cardTitleInline {
+  position: relative;
+  color: white;
+  margin-left: 10px;
+  font-size: 1.2em;
+  max-width: calc(100% - 70px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease;
+}
 
+.cardTitleInline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #62fea3;
+  transition: width 0.3s ease;
+}
 
+.cardTitleInline:hover {
+  color: #62fea3;
+}
 
- 
+.cardTitleInline:hover::after {
+  width: 100%;
+}
+
+.cardAvatarInline {
+  margin: 5px;
+  transition: transform 0.7s ease;
+}
+
+.cardAvatarInline:hover {
+  transform: rotate(360deg);
+}

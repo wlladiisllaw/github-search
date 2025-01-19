@@ -1,50 +1,35 @@
-# React + TypeScript + Vite
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=ГитГид+-+ваш+проводник+в+GitGub)](https://git.io/typing-svg)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Бесконечный скролл с использованием API GitHub
 
-Currently, two official plugins are available:
+Этот проект представляет собой React-приложение с бесконечным скроллом и постепенной подгрузкой данных, использующее публичное API GitHub для получения большого списка репозиториев. Приложение поддерживает плавный скроллинг, сортировку репозиториев, а также локальное удаление и редактирование элементов.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Ключевые особенности
 
-## Expanding the ESLint configuration
+- **Бесконечный скролл и постепенная подгрузка данных**: Используются скелетоны для плавного отображения процесса загрузки данных.
+- **Интеграция с API GitHub**: Приложение получает данные через публичное API GitHub, что позволяет искать и сортировать репозитории по параметрам, таким как дата создания, количество звезд и форков.
+- **Поддержка сортировки**: Репозитории можно сортировать по дате создания, количеству звезд или форков с использованием возможностей API GitHub.
+- **Локальное удаление и редактирование**: С помощью MobX реализовано локальное удаление и редактирование карточек репозиториев, что обеспечивает удобное взаимодействие с пользователем.
+- **Дебаунс для поиска**: В строке поиска реализован механизм дебаунса, который уменьшает количество запросов к API при поиске репозиториев.
+- **Адаптивный дизайн**: Интерфейс оптимизирован для мобильных устройств и ПК, обеспечивая комфортное использование на разных экранах.
+- **Обработка ошибок**: Приложение корректно обрабатывает ошибку превышения лимита запросов GitHub (10 запросов в минуту) и блокирует дальнейшие API-запросы до сброса лимита.
+- **UI-компоненты**: Для реализации интерфейса использована библиотека Ant Design, которая была выбрана за свою надежность, широкие возможности кастомизации и отличную документацию.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Технологии
 
-- Configure the top-level `parserOptions` property like this:
+- React
+- MobX
+- Ant Design
+- TypeScript
+- Jest
+- React Testing Library
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+## Доступность через GitHub Pages
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Сайт можно развернуть и открыть через GitHub Pages. Для этого нужно выполнить следующие шаги:
 
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-});
-```
+1. Перейти в директорию проекта.
+2. Выполнить команду для сборки:
+   ```bash
+   npm run build
+   ```

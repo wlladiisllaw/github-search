@@ -1,17 +1,17 @@
 import { makeAutoObservable } from "mobx";
 
 export interface Repository {
-    name: string;
-    avatar: string;
-    html_url: string;
-    stars: number;
-    stargazers_count: number;
-    forks: number;
-    created_at: string; 
-    owner: {
-      avatar_url: string;
-    };
-  }
+  name: string;
+  avatar: string;
+  html_url: string;
+  stars: number;
+  stargazers_count: number;
+  forks: number;
+  created_at: string;
+  owner: {
+    avatar_url: string;
+  };
+}
 
 class RepositoryStore {
   data: Repository[] = [];
@@ -49,7 +49,6 @@ class RepositoryStore {
   }
 
   updateRepository(index: number, updatedRepo: Partial<Repository>) {
-  
     this.data[index] = { ...this.data[index], ...updatedRepo };
   }
 
@@ -57,9 +56,15 @@ class RepositoryStore {
     this.data.splice(index, 1);
   }
 
-
   async fetchRepositories() {
-    this.clearError(); 
+    this.clearError();
+
+  if (!this.search.trim()) {
+    this.isLoading = false; 
+    this.fetching = false; 
+    this.loadingNewItems = false;
+    return;
+  }
 
     const url = `https://api.github.com/search/repositories?q=${
       this.search
@@ -76,10 +81,9 @@ class RepositoryStore {
         html_url: item.html_url,
         stars: item.stargazers_count,
         forks: item.forks,
-        created_at: item.created_at.substring(0,4),
+        created_at: item.created_at.substring(0, 4),
         owner: item.owner,
       }));
-      console.log(repos);
 
       this.data = this.currentPage === 1 ? repos : [...this.data, ...repos];
       this.currentPage += 1;

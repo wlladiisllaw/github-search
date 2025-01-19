@@ -1,4 +1,5 @@
 import styles from "./Header.module.css";
+import React from "react";
 
 export function Header() {
   return (
@@ -8,11 +9,7 @@ export function Header() {
         target="_blank"
         className={styles.link}
       >
-        <img
-          src="vk_logo.svg"
-          alt="логотип VK"
-          className={styles.logo}
-        />
+        <img src="vk_logo.svg" alt="логотип VK" className={styles.logo} />
       </a>
       <h3 className={styles.title}>ГитГид</h3>
     </header>
