@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { Card, Avatar, Input, Button } from "antd";
 import {
@@ -8,7 +9,7 @@ import {
 } from "@ant-design/icons";
 import { repositoryStore } from "../../store/repositoryStore";
 import styles from "./RepositoryCard.module.css";
-import React from "react";
+
 
 export interface RepositoryCardProps {
   repo: {
